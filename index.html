@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40th Birthday Celebration | Travis Knuppe</title>
+    
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA8C2C',
+                        },
+                        navy: '#0A192F',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0A192F;
+            background-image: radial-gradient(circle at 50% 0%, #112B54 0%, #0A192F 70%);
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(to right, #D4AF37, #F3E5AB, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Subtle floating animation for top graphics */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold selection:text-navy">
+
+    <!-- Main Container -->
+    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+        
+        <!-- Header / Hero Section -->
+        <header class="text-center mb-16 relative">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20 pointer-events-none">
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="animate-float">
+                    <circle cx="100" cy="100" r="99.5" stroke="#D4AF37" stroke-dasharray="4 4"/>
+                    <circle cx="100" cy="100" r="80" stroke="#D4AF37" stroke-width="0.5"/>
+                </svg>
+            </div>
+
+            <p class="uppercase tracking-[0.3em] text-gold-light text-sm font-semibold mb-6">You are warmly invited to</p>
+
+            <!-- Main Photo Section -->
+            <div class="flex justify-center mb-8 relative z-10">
+                <!-- Replace the src URL below with the path to your actual photo, e.g., 'images/travis.jpg' -->
+                <div class="w-48 h-48 md:w-56 md:h-56 rounded-full p-2 border-2 border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] bg-navy">
+                    <img src="https://via.placeholder.com/400x400/D4AF37/0A192F?text=Add+Photo+Here" alt="Travis" class="rounded-full w-full h-full object-cover">
+                </div>
+            </div>
+
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-4 gold-text-gradient leading-tight">Travis Knuppe's</h1>
+            <h2 class="font-serif text-3xl md:text-5xl italic text-gray-300 mb-8">40th Birthday Celebration</h2>
+            
+            <div class="w-24 h-[1px] bg-gold mx-auto mb-8 opacity-50"></div>
+            
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                "Life begins at forty." Join us for an unforgettable evening of joy, laughter, and great company as we celebrate four decades of memories and toast to many more!
+            </p>
+        </header>
+
+        <!-- Countdown Timer -->
+        <section class="glass-panel rounded-2xl p-8 mb-16 text-center shadow-2xl">
+            <h3 class="font-serif text-2xl text-gold mb-6">The Celebration Begins In:</h3>
+            <div id="countdown" class="flex justify-center gap-4 md:gap-8 text-center">
+                <div class="flex flex-col">
+                    <span id="days" class="text-4xl md:text-5xl font-serif font-bold text-white">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gold-light mt-2">Days</span>
+                </div>
+                <div class="text-4xl md:text-5xl font-serif text-gold-dark">:</div>
+                <div class="flex flex-col">
+                    <span id="hours" class="text-4xl md:text-5xl font-serif font-bold text-white">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gold-light mt-2">Hours</span>
+                </div>
+                <div class="text-4xl md:text-5xl font-serif text-gold-dark">:</div>
+                <div class="flex flex-col">
+                    <span id="minutes" class="text-4xl md:text-5xl font-serif font-bold text-white">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gold-light mt-2">Mins</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            
+            <!-- When Box -->
+            <div class="glass-panel rounded-2xl p-8 hover:border-gold transition-colors duration-300">
+                <div class="flex items-center mb-4 text-gold">
+                    <svg class="w-8 h-8 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <h3 class="font-serif text-3xl">When</h3>
+                </div>
+                <p class="text-xl font-semibold mb-1">Saturday, September 19th, 2026</p>
+                <p class="text-gray-400 text-lg">5:00 PM onwards</p>
+            </div>
+
+            <!-- Where Box -->
+            <div class="glass-panel rounded-2xl p-8 hover:border-gold transition-colors duration-300">
+                <div class="flex items-center mb-4 text-gold">
+                    <svg class="w-8 h-8 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <h3 class="font-serif text-3xl">Where</h3>
+                </div>
+                <p class="text-xl font-semibold mb-1">Trav and Stephs House</p>
+                <p class="text-gray-400 text-lg">123 Celebration Ave<br>Anytown, CA 90210</p>
+                <a href="https://www.google.com/maps/place/Pleasanton,+CA+94566/" target="_blank" class="inline-block mt-4 text-gold-light hover:text-white underline decoration-gold/50 underline-offset-4 transition-colors">View on Map &rarr;</a>
+            </div>
+
+            <!-- Attire Box -->
+            <div class="glass-panel rounded-2xl p-8 hover:border-gold transition-colors duration-300">
+                <div class="flex items-center mb-4 text-gold">
+                    <svg class="w-8 h-8 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <h3 class="font-serif text-3xl">Attire</h3>
+                </div>
+                <p class="text-xl font-semibold mb-1">Mandatory Costumes</p>
+                <p class="text-gray-400">Dress as your favorite memory or era of Trav.</p>
+            </div>
+
+            <!-- Activities Box -->
+            <div class="glass-panel rounded-2xl p-8 hover:border-gold transition-colors duration-300">
+                <div class="flex items-center mb-4 text-gold">
+                    <svg class="w-8 h-8 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="font-serif text-3xl">Activities</h3>
+                </div>
+                <ul class="text-gray-400 space-y-2">
+                    <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-gold mr-3"></span> Live Karaoke Entertainment</li>
+                    <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-gold mr-3"></span> Custom Geo Guesser Game</li>
+                    <li class="flex items-center"><span class="w-2 h-2 rounded-full bg-gold mr-3"></span> Premium Open Bar</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RSVP Section -->
+        <section class="text-center bg-gold/10 rounded-3xl p-10 border border-gold/30">
+            <h2 class="font-serif text-4xl mb-4 text-gold">RSVP</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto">
+                Please let us know if you can make it by <strong class="text-white">August 19th, 2026</strong> so we can finalize the details for an amazing night.
+            </p>
+            
+            <a href="mailto:trav@tknup.com?subject=RSVP%20for%20Travis'%2040th%20Birthday" class="inline-block bg-gold hover:bg-gold-light text-navy font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+                Click here to RSVP via Email
+            </a>
+            
+            <p class="mt-6 text-sm text-gray-400">
+                Or reach out directly to Alex at <a href="mailto:rsvp.alex@email.com" class="text-gold-light hover:underline">rsvp.alex@email.com</a>
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 text-gray-500 text-sm">
+            <p>&copy; 2026 Travis's 40th Birthday. Can't wait to see you there!</p>
+        </footer>
+
+    </main>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date("Sep 19, 2026 17:00:00").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            // Display the result in the corresponding elements
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<div class='text-3xl font-serif text-gold-light'>The party has started!</div>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

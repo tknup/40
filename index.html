@@ -206,6 +206,24 @@
 
     <!-- Interactive JavaScript -->
     <script>
+                // --- Photo Slideshow ---
+        const slideshowImages = document.querySelectorAll('.slideshow-img');
+        let currentImageIndex = 0;
+
+        if (slideshowImages.length > 1) {
+            setInterval(() => {
+                // Fade out current image
+                slideshowImages[currentImageIndex].classList.remove('opacity-100');
+                slideshowImages[currentImageIndex].classList.add('opacity-0');
+                
+                // Advance to the next image (looping back to 0)
+                currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+                
+                // Fade in new image
+                slideshowImages[currentImageIndex].classList.remove('opacity-0');
+                slideshowImages[currentImageIndex].classList.add('opacity-100');
+            }, 3500); // Change image every 3.5 seconds
+        }
         // Set the date we're counting down to
         const countDownDate = new Date("Sep 19, 2026 17:00:00").getTime();
 

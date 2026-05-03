@@ -85,9 +85,17 @@
 
             <!-- Main Photo Section -->
             <div class="flex justify-center mb-8 relative z-10">
-                <!-- Replace the src URL below with the path to your actual photo, e.g., 'images/travis.jpg' -->
+                <!-- Outer styling ring -->
                 <div class="w-48 h-48 md:w-56 md:h-56 rounded-full p-2 border-2 border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] bg-navy">
-                    <img src="https://raw.githubusercontent.com/tknup/40/refs/heads/main/t.jpg" alt="Travis" class="rounded-full w-full h-full object-cover">
+                    <!-- Inner container for stacking images -->
+                    <div class="relative w-full h-full rounded-full overflow-hidden">
+                        <!-- Add as many images as you like below! First one gets opacity-100, the rest get opacity-0 -->
+                        <img src="https://raw.githubusercontent.com/tknup/40/refs/heads/main/t.jpg" alt="Travis" class="slideshow-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100">
+                        <img src="https://raw.githubusercontent.com/tknup/40/refs/heads/main/1.jpg" alt="Travis" class="slideshow-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+                        <img src="https://raw.githubusercontent.com/tknup/40/refs/heads/main/4.jpg" alt="Travis" class="slideshow-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+                        <img src="https://raw.githubusercontent.com/tknup/40/refs/heads/main/41.jpg" alt="Travis" class="slideshow-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+                        <img src="https://raw.githubusercontent.com/tknup/40/refs/heads/main/40.jpg" alt="Travis" class="slideshow-img absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0">
+                    </div>
                 </div>
             </div>
 
